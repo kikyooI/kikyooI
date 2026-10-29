@@ -7,7 +7,7 @@ page {
 }
 
 .container {
-  padding: 0 24rpx 40rpx;
+  padding: 24rpx 24rpx 40rpx;
   box-sizing: border-box;
 }
 
@@ -98,10 +98,10 @@ page {
 /* ============ 胶囊筛选 ============ */
 .chips {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 16rpx;
   margin-bottom: 24rpx;
-  overflow-x: auto;
+  overflow: visible;
 }
 
 .chip {
