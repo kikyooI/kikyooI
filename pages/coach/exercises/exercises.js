@@ -29,7 +29,9 @@ Page({
         const idx = types.findIndex(t => t._id === this.data.typeId)
         if (idx >= 0) typeIndex = idx
       }
-      this.setData({ types, typeIndex }, () => {
+      // 首次进入未指定类型时，默认选中第一个类型，避免"显示该类型但列出全部动作"
+      const typeId = types[typeIndex] ? types[typeIndex]._id : ''
+      this.setData({ types, typeIndex, typeId }, () => {
         this.loadExercises()
       })
     } catch (e) {
