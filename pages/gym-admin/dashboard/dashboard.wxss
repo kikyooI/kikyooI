@@ -1,0 +1,62 @@
+.header {
+  margin-bottom: 32rpx;
+}
+
+.welcome {
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  border-radius: 16rpx;
+  padding: 40rpx;
+  color: #fff;
+  margin-bottom: 32rpx;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-num {
+  font-size: 64rpx;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 26rpx;
+  opacity: 0.9;
+}
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+
+.menu-item {
+  width: calc((100% - 40rpx) / 3);
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 36rpx 0;
+  text-align: center;
+}
+
+.menu-icon {
+  font-size: 56rpx;
+  margin-bottom: 12rpx;
+}
+
+.menu-name {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.logout {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 28rpx;
+  margin-top: 60rpx;
+  padding: 20rpx;
+}

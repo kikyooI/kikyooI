@@ -1,0 +1,85 @@
+.user-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 10rpx;
+}
+
+.user-meta {
+  display: flex;
+  align-items: center;
+}
+
+.tag {
+  font-size: 22rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.tag-blue {
+  background: #e8f4fd;
+  color: #4A90D9;
+}
+
+.tag-green {
+  background: #e8f8f0;
+  color: #27ae60;
+}
+
+.tag-orange {
+  background: #fff3e0;
+  color: #e67e22;
+}
+
+.tag-red {
+  background: #fdecea;
+  color: #e74c3c;
+}
+
+.filter-tabs {
+  display: flex;
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 8rpx;
+  margin-bottom: 24rpx;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 16rpx 0;
+  font-size: 26rpx;
+  color: #666;
+  border-radius: 8rpx;
+}
+
+.tab.active {
+  background: #4A90D9;
+  color: #fff;
+}
+
+.action-row {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 20rpx;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 12rpx 28rpx;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+  border: 1rpx solid #ddd;
+  color: #666;
+}
+
+.btn-primary {
+  background: #4A90D9;
+  color: #fff;
+  border-color: #4A90D9;
+}
+
+.btn-danger {
+  background: #fff;
+  color: #e74c3c;
+  border-color: #e74c3c;
+}

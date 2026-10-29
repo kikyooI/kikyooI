@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="filter-bar">
+    <picker mode="selector" range="{{students}}" range-key="name" value="{{studentIndex}}" bindchange="onStudentChange">
+      <view class="filter-item">
+        {{students.length>0 ? students[studentIndex].name : '筛选'}} ▾
+      </view>
+    </picker>
+  </view>
+
+  <view wx:if="{{records.length===0}}" class="empty">暂无训练记录</view>
+
+  <view wx:for="{{records}}" wx:key="_id" class="card" bindtap="goDetail" data-id="{{item._id}}">
+    <view class="flex-between">
+      <view>
+        <view class="record-date">{{item.trainingDate}}</view>
+        <view class="record-student">{{item.studentName}} · {{item.typeName}}</view>
+      </view>
+      <text class="arrow">›</text>
+    </view>
+    <view class="record-summary">
+      共 {{item.items.length}} 个动作
+    </view>
+    <view wx:if="{{item.notes}}" class="text-muted" style="margin-top:8rpx;">{{item.notes}}</view>
+  </view>
+
+  <view wx:if="{{records.length>0}}" class="text-muted" style="text-align:center;padding:24rpx 0;">
+    <text wx:if="{{loading}}">加载中...</text>
+    <text wx:elif="{{!hasMore}}">没有更多了</text>
+  </view>
+
+  <view class="fab" bindtap="onAdd">+</view>
+</view>

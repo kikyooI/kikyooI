@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="filter-tabs">
+    <view class="tab {{filterRole===''?'active':''}}" bindtap="onFilter" data-role="">全部</view>
+    <view class="tab {{filterRole==='coach'?'active':''}}" bindtap="onFilter" data-role="coach">教练</view>
+    <view class="tab {{filterRole==='student'?'active':''}}" bindtap="onFilter" data-role="student">学员</view>
+    <view class="tab {{filterRole==='gym_admin'?'active':''}}" bindtap="onFilter" data-role="gym_admin">管理员</view>
+  </view>
+
+  <view wx:if="{{users.length===0}}" class="empty">暂无用户</view>
+
+  <view wx:for="{{users}}" wx:key="_id" class="card">
+    <view class="flex-between">
+      <view class="flex-1">
+        <view class="user-name">{{item.name}}</view>
+        <view class="user-meta">
+          <text class="tag {{item.role==='coach'?'tag-blue':item.role==='student'?'tag-green':'tag-orange'}}">{{item.role==='coach'?'教练':item.role==='student'?'学员':'管理员'}}</text>
+          <text class="tag {{item.status==='approved'?'tag-green':item.status==='pending'?'tag-orange':'tag-red'}}" style="margin-left:12rpx;">{{item.status==='approved'?'正常':item.status==='pending'?'待审批':item.status==='rejected'?'已驳回':'已禁用'}}</text>
+        </view>
+        <view class="text-muted" style="margin-top:8rpx;">{{item.phone || '未填电话'}}</view>
+      </view>
+    </view>
+    <view class="action-row">
+      <!-- 超管：直接编辑用户 -->
+      <view wx:if="{{isSuperAdmin && item.role!=='super_admin'}}" class="action-btn" catchtap="goEdit" data-id="{{item._id}}">编辑</view>
+      <!-- 学员：查看训练记录和训练计划 -->
+      <view wx:if="{{item.role==='student'}}" class="action-btn btn-primary" catchtap="goRecords" data-openid="{{item.openid}}" data-name="{{item.name}}">训练记录</view>
+      <view wx:if="{{item.role==='student'}}" class="action-btn btn-primary" catchtap="goPlans" data-openid="{{item.openid}}" data-name="{{item.name}}">训练计划</view>
+      <!-- 教练：可以设为管理员 -->
+      <view wx:if="{{item.role==='coach' && item.status==='approved'}}" class="action-btn btn-primary" catchtap="setAdmin" data-id="{{item._id}}">设为管理员</view>
+      <!-- 管理员：可以移除管理员权限 -->
+      <view wx:if="{{item.role==='gym_admin'}}" class="action-btn" catchtap="removeAdmin" data-id="{{item._id}}">移除管理员</view>
+      <!-- 正常用户（教练/学员）：可以删除 -->
+      <view wx:if="{{item.status==='approved' && item.role!=='gym_admin'}}" class="action-btn btn-danger" catchtap="deleteUser" data-id="{{item._id}}">删除</view>
+      <!-- 已禁用：可以启用 -->
+      <view wx:if="{{item.status==='disabled'}}" class="action-btn btn-primary" catchtap="enableUser" data-id="{{item._id}}">启用</view>
+    </view>
+  </view>
+</view>

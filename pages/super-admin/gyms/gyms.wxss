@@ -1,0 +1,163 @@
+.header {
+  padding: 20rpx 8rpx 30rpx;
+}
+
+.header-title {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.header-sub {
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+/* 审批入口 */
+.approval-entry {
+  background: linear-gradient(135deg, #4A90D9, #357ABD);
+  border-radius: 16rpx;
+  padding: 28rpx 30rpx;
+  margin-bottom: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8rpx 20rpx rgba(74,144,217,0.25);
+}
+
+.approval-left {
+  display: flex;
+  align-items: center;
+}
+
+.approval-icon {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 16rpx;
+  background: rgba(255,255,255,0.2);
+  text-align: center;
+  line-height: 64rpx;
+  font-size: 32rpx;
+  margin-right: 20rpx;
+}
+
+.approval-text {
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: 600;
+}
+
+.approval-right {
+  display: flex;
+  align-items: center;
+}
+
+.approval-badge {
+  background: #fff;
+  color: #e74c3c;
+  font-size: 24rpx;
+  padding: 6rpx 20rpx;
+  border-radius: 24rpx;
+  font-weight: 600;
+}
+
+.badge-gray {
+  color: #999;
+}
+
+.approval-arrow {
+  color: rgba(255,255,255,0.8);
+  font-size: 40rpx;
+  margin-left: 12rpx;
+}
+
+/* 健身房卡片 */
+.gym-top {
+  display: flex;
+  align-items: flex-start;
+}
+
+.gym-avatar {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 20rpx;
+  background: linear-gradient(135deg, #EAF3FC, #D6E8F8);
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 88rpx;
+  margin-right: 24rpx;
+  flex-shrink: 0;
+}
+
+.gym-name {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gym-meta {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta-icon {
+  font-size: 22rpx;
+  margin-right: 8rpx;
+}
+
+.gym-actions {
+  display: flex;
+  margin-top: 26rpx;
+  padding-top: 24rpx;
+  border-top: 1rpx solid #f2f2f2;
+}
+
+.act-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 14rpx 36rpx;
+  border-radius: 36rpx;
+  font-size: 26rpx;
+  line-height: 1.4;
+  color: #4A90D9;
+  background: #EAF3FC;
+  margin-right: 20rpx;
+  text-align: center;
+}
+
+.act-primary {
+  background: #4A90D9;
+  color: #fff;
+}
+
+.fab {
+  position: fixed;
+  right: 40rpx;
+  bottom: 60rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #4A90D9;
+  color: #fff;
+  font-size: 56rpx;
+  text-align: center;
+  line-height: 100rpx;
+  box-shadow: 0 8rpx 24rpx rgba(74,144,217,0.4);
+}
+
+.logout {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 28rpx;
+  margin-top: 60rpx;
+  padding: 20rpx;
+}

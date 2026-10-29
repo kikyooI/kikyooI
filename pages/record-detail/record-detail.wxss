@@ -1,0 +1,76 @@
+.detail-header {
+  margin-bottom: 24rpx;
+}
+
+.detail-date {
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-bottom: 12rpx;
+}
+
+.detail-meta {
+  margin-top: 8rpx;
+}
+
+.detail-info {
+  border-top: 1rpx solid #f0f0f0;
+  padding-top: 20rpx;
+}
+
+.info-row {
+  display: flex;
+  padding: 8rpx 0;
+}
+
+.info-label {
+  width: 120rpx;
+  color: #999;
+  font-size: 26rpx;
+}
+
+.info-value {
+  flex: 1;
+  font-size: 26rpx;
+}
+
+.ex-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+
+.set-header, .set-row {
+  display: flex;
+  padding: 10rpx 0;
+}
+
+.set-header {
+  background: #f5f6fa;
+  border-radius: 8rpx;
+  padding: 12rpx 16rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.set-col {
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+}
+
+.footer-actions {
+  display: flex;
+  align-items: center;
+}
+
+.footer-del {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.footer-edit {
+  flex: 1;
+  margin-left: 24rpx;
+  line-height: normal;
+}
+

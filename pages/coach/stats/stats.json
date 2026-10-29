@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "数据统计",
+  "usingComponents": {
+    "line-chart": "/components/line-chart/line-chart"
+  }
+}

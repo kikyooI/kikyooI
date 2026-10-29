@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="form-item">
+    <text class="form-label">类型名称 *</text>
+    <input class="form-input" placeholder="如：胸部、背部、腿部" value="{{name}}" bindinput="onInput" />
+  </view>
+  <view style="margin-top:60rpx;">
+    <button class="btn-primary" bindtap="submit" loading="{{loading}}" disabled="{{loading}}">保存</button>
+  </view>
+</view>

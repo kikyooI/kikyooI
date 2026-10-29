@@ -1,0 +1,42 @@
+<view class="container">
+  <view wx:if="{{stats}}">
+    <view class="stat-overview">
+      <view class="stat-num">{{stats.totalRecords}}</view>
+      <view class="stat-label">总训练次数</view>
+    </view>
+
+    <view class="section-title">训练频率</view>
+    <view class="card">
+      <view wx:if="{{stats.frequency.length===0}}" class="text-muted">暂无训练数据</view>
+      <view wx:for="{{stats.frequency}}" wx:key="date" class="freq-row">
+        <text class="freq-date">{{item.date}}</text>
+        <view class="freq-bar-wrap">
+          <view class="freq-bar" style="width:{{item.count * 30}}rpx;"></view>
+        </view>
+        <text class="freq-count">{{item.count}}次</text>
+      </view>
+    </view>
+
+    <view class="section-title">训练类型分布</view>
+    <view class="card">
+      <view wx:if="{{stats.typeDist.length===0}}" class="text-muted">暂无数据</view>
+      <view wx:for="{{stats.typeDist}}" wx:key="name" class="dist-row">
+        <text class="dist-name">{{item.name}}</text>
+        <text class="dist-count">{{item.count}}次</text>
+      </view>
+    </view>
+
+    <view class="section-title">动作重量趋势</view>
+    <view wx:if="{{exerciseTrend.length===0}}" class="card">
+      <view class="text-muted">暂无数据</view>
+    </view>
+    <view wx:for="{{exerciseTrend}}" wx:key="name" class="card">
+      <view class="trend-title">{{item.name}}</view>
+      <line-chart wx:if="{{item.data.length > 0}}" points="{{item.data}}"></line-chart>
+      <view wx:for="{{item.data}}" wx:for-item="d" wx:key="date" class="trend-row">
+        <text class="trend-date">{{d.date}}</text>
+        <text class="trend-weight">最大重量 {{d.weight}}kg</text>
+      </view>
+    </view>
+  </view>
+</view>

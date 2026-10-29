@@ -1,0 +1,41 @@
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="header-title">健身房管理</view>
+    <view class="header-sub">共 {{gyms.length}} 家门店</view>
+  </view>
+
+  <!-- 审批入口 -->
+  <view class="approval-entry" bindtap="goApproval">
+    <view class="approval-left">
+      <view class="approval-icon">✅</view>
+      <view class="approval-text">用户审批</view>
+    </view>
+    <view class="approval-right">
+      <view class="approval-badge {{pendingCount===0?'badge-gray':''}}">{{pendingCount}} 待处理</view>
+      <text class="approval-arrow">›</text>
+    </view>
+  </view>
+
+  <view wx:if="{{gyms.length===0}}" class="empty">暂无健身房，点击右下角添加</view>
+
+  <view wx:for="{{gyms}}" wx:key="_id" class="card">
+    <view class="gym-top">
+      <view class="gym-avatar">🏋️</view>
+      <view class="flex-1">
+        <view class="gym-name">{{item.name}}</view>
+        <view class="gym-meta"><text class="meta-icon">📍</text>{{item.address || '未填写地址'}}</view>
+        <view class="gym-meta"><text class="meta-icon">📞</text>{{item.phone || '未填写电话'}}</view>
+      </view>
+    </view>
+    <view class="gym-actions">
+      <view class="act-btn act-primary" catchtap="enterGym" data-id="{{item._id}}">🚪 进入管理</view>
+      <view class="act-btn" catchtap="onEdit" data-id="{{item._id}}">✏️ 编辑</view>
+      <view class="act-btn" catchtap="goAdmins" data-id="{{item._id}}">👥 管理员</view>
+    </view>
+  </view>
+
+  <view class="fab" bindtap="onAdd">+</view>
+
+  <view class="logout" bindtap="logout">退出登录</view>
+</view>

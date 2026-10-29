@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="header">
+    <view class="welcome">管理工作台 👋</view>
+  </view>
+
+  <view class="stat-card">
+    <view class="stat-item">
+      <view class="stat-num">{{pendingCount}}</view>
+      <view class="stat-label">待审批</view>
+    </view>
+  </view>
+
+  <view class="menu-grid">
+    <view wx:for="{{menuList}}" wx:key="name" class="menu-item" bindtap="goPage" data-url="{{item.url}}">
+      <view class="menu-icon">{{item.icon}}</view>
+      <view class="menu-name">{{item.name}}</view>
+    </view>
+  </view>
+
+  <view wx:if="{{isSuperAdmin}}" class="logout" style="color:#4A90D9;margin-bottom:20rpx;" bindtap="exitGym">← 返回超管工作台</view>
+
+  <view class="logout" bindtap="logout">退出登录</view>
+</view>

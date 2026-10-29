@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="form-item">
+    <text class="form-label">健身房名称 *</text>
+    <input class="form-input" placeholder="请输入健身房名称" value="{{name}}" data-field="name" bindinput="onInput" />
+  </view>
+  <view class="form-item">
+    <text class="form-label">地址</text>
+    <input class="form-input" placeholder="请输入地址" value="{{address}}" data-field="address" bindinput="onInput" />
+  </view>
+  <view class="form-item">
+    <text class="form-label">联系电话</text>
+    <input class="form-input" type="number" placeholder="请输入联系电话" value="{{phone}}" data-field="phone" bindinput="onInput" />
+  </view>
+  <view class="form-item">
+    <text class="form-label">简介</text>
+    <textarea class="form-textarea" placeholder="健身房简介" value="{{description}}" data-field="description" bindinput="onInput"></textarea>
+  </view>
+  <view style="margin-top:60rpx;">
+    <button class="btn-primary" bindtap="submit" loading="{{loading}}" disabled="{{loading}}">保存</button>
+  </view>
+</view>

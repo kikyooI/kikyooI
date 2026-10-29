@@ -1,0 +1,49 @@
+<view class="container">
+  <view class="card">
+    <view class="form-item">
+      <text class="form-label">姓名</text>
+      <input class="form-input" value="{{name}}" bindinput="onNameInput" placeholder="姓名" />
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">电话</text>
+      <input class="form-input" type="number" value="{{phone}}" bindinput="onPhoneInput" placeholder="电话" />
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">角色</text>
+      <picker mode="selector" range="{{roles}}" range-key="label" value="{{roleIndex}}" bindchange="onRoleChange">
+        <view class="picker-box">
+          {{roles[roleIndex].label}}
+          <text class="arrow">›</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">状态</text>
+      <picker mode="selector" range="{{statusList}}" range-key="label" value="{{statusIndex}}" bindchange="onStatusChange">
+        <view class="picker-box">
+          {{statusList[statusIndex].label}}
+          <text class="arrow">›</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">所属健身房</text>
+      <picker mode="selector" range="{{gyms}}" range-key="name" value="{{gymIndex}}" bindchange="onGymChange">
+        <view class="picker-box">
+          {{gyms.length>0 ? gyms[gymIndex].name : '加载中'}}
+          <text class="arrow">›</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view style="height:120rpx;"></view>
+
+  <view class="footer-bar">
+    <button class="btn-primary" bindtap="submit" loading="{{saving}}" disabled="{{saving}}">保存</button>
+  </view>
+</view>

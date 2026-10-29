@@ -1,0 +1,97 @@
+.header {
+  margin-bottom: 32rpx;
+}
+
+.welcome {
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-bottom: 8rpx;
+}
+
+.today {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #4A90D9 0%, #357ABD 100%);
+  border-radius: 16rpx;
+  padding: 40rpx;
+  color: #fff;
+  margin-bottom: 32rpx;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-num {
+  font-size: 64rpx;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 26rpx;
+  opacity: 0.9;
+}
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+
+.menu-item {
+  width: calc((100% - 40rpx) / 3);
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 36rpx 0;
+  text-align: center;
+}
+
+.menu-icon {
+  font-size: 56rpx;
+  margin-bottom: 12rpx;
+}
+
+.menu-name {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.badge {
+  position: absolute;
+  top: 16rpx;
+  right: 16rpx;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 20rpx;
+  min-width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  border-radius: 16rpx;
+  padding: 0 8rpx;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.apply-btn {
+  background: #fff;
+  border: 2rpx solid #e67e22;
+  color: #e67e22;
+  text-align: center;
+  padding: 24rpx 0;
+  border-radius: 48rpx;
+  font-size: 28rpx;
+  margin-top: 40rpx;
+}
+
+.logout {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 28rpx;
+  margin-top: 60rpx;
+  padding: 20rpx;
+}

@@ -1,0 +1,21 @@
+<view class="container">
+  <view wx:if="{{users.length===0}}" class="empty">暂无待审批用户</view>
+
+  <view wx:for="{{users}}" wx:key="_id" class="card">
+    <view class="flex-between">
+      <view>
+        <view class="user-name">{{item.name}}</view>
+        <view class="user-meta">
+          <text wx:if="{{item.status==='pending_gym_admin'}}" class="tag tag-orange">店长申请</text>
+          <text wx:elif="{{item.role==='coach'}}" class="tag tag-blue">教练</text>
+          <text wx:else class="tag tag-green">学员</text>
+          <text class="text-muted" style="margin-left:12rpx;">{{item.phone || '未填电话'}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="flex-row" style="margin-top:20rpx;">
+      <view class="btn-outline" style="color:#27ae60;border-color:#27ae60;flex:1;margin-right:16rpx;text-align:center;" catchtap="approve" data-id="{{item._id}}">通过</view>
+      <view class="btn-outline" style="color:#e74c3c;border-color:#e74c3c;flex:1;text-align:center;" catchtap="reject" data-id="{{item._id}}">驳回</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,66 @@
+<view class="container">
+  <view class="form-item">
+    <text class="form-label">计划名称 *</text>
+    <input class="form-input" placeholder="如：新手增肌计划" value="{{name}}" data-field="name" bindinput="onInput" />
+  </view>
+
+  <view class="form-item">
+    <text class="form-label">计划日期</text>
+    <picker mode="date" value="{{planDate}}" bindchange="onDateChange">
+      <view class="picker-box">
+        {{planDate}}
+        <text class="arrow">›</text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="form-item">
+    <text class="form-label">训练类型</text>
+    <picker mode="selector" range="{{types}}" range-key="name" value="{{typeIndex}}" bindchange="onTypeChange">
+      <view class="picker-box">
+        {{types.length>0 ? types[typeIndex].name : '请选择'}}
+        <text class="arrow">›</text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="form-item">
+    <text class="form-label">分配给学员 *</text>
+    <picker mode="selector" range="{{students}}" range-key="name" value="{{studentIndex}}" bindchange="onStudentChange">
+      <view class="picker-box">
+        {{students.length>0 ? students[studentIndex].name : '暂无学员'}}
+        <text class="arrow">›</text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="section-title">训练动作</view>
+
+  <view wx:for="{{items}}" wx:key="_id" class="card">
+    <view class="flex-between">
+      <text class="ex-name">{{item.name}}</text>
+      <text class="del-btn" catchtap="onRemoveExercise" data-idx="{{index}}">✕</text>
+    </view>
+    <view class="flex-row" style="margin-top:16rpx;">
+      <view class="set-config">
+        <text class="set-label">组数</text>
+        <input class="set-num-input" type="number" value="{{item.sets}}" data-idx="{{index}}" data-field="sets" bindinput="onItemInput" />
+      </view>
+      <view class="set-config">
+        <text class="set-label">目标个数/组</text>
+        <input class="set-num-input" type="number" value="{{item.targetReps}}" data-idx="{{index}}" data-field="targetReps" bindinput="onItemInput" />
+      </view>
+    </view>
+  </view>
+
+  <picker wx:if="{{exercises.length > 0}}" mode="selector" range="{{exercises}}" range-key="name" bindchange="onExercisePick">
+    <view class="add-exercise">+ 添加训练动作</view>
+  </picker>
+  <view wx:else class="add-exercise" bindtap="onNoExercise">+ 添加训练动作</view>
+
+  <view style="height:120rpx;"></view>
+
+  <view class="footer-bar">
+    <button class="btn-primary" bindtap="submit" loading="{{loading}}" disabled="{{loading}}">保存计划</button>
+  </view>
+</view>

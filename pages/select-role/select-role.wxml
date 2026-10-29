@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="section-title">选择身份</view>
+  <view class="role-select">
+    <view class="role-card {{role==='coach'?'active':''}}" bindtap="selectRole" data-role="coach">
+      <view class="role-icon">🏋️</view>
+      <view class="role-name">教练</view>
+      <view class="role-desc">管理训练计划、记录学员训练</view>
+    </view>
+    <view class="role-card {{role==='student'?'active':''}}" bindtap="selectRole" data-role="student">
+      <view class="role-icon">🏃</view>
+      <view class="role-name">学员</view>
+      <view class="role-desc">查看训练记录和计划</view>
+    </view>
+  </view>
+
+  <view class="section-title">选择健身房</view>
+  <picker mode="selector" range="{{gyms}}" range-key="name" value="{{gymIndex}}" bindchange="onGymChange">
+    <view class="picker-box">
+      {{gyms.length>0 ? gyms[gymIndex].name : '暂无健身房'}}
+      <text class="arrow">›</text>
+    </view>
+  </picker>
+
+  <view class="section-title">个人信息</view>
+  <view class="form-item">
+    <text class="form-label">姓名 *</text>
+    <input class="form-input" placeholder="请输入姓名" value="{{name}}" data-field="name" bindinput="onInput" />
+  </view>
+  <view class="form-item">
+    <text class="form-label">手机号</text>
+    <input class="form-input" type="number" placeholder="请输入手机号" value="{{phone}}" data-field="phone" bindinput="onInput" />
+  </view>
+
+  <view style="margin-top: 60rpx;">
+    <button class="btn-primary" bindtap="submit" loading="{{loading}}" disabled="{{loading}}">提交申请</button>
+  </view>
+</view>

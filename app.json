@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/select-role/select-role",
+    "pages/super-admin/gyms/gyms",
+    "pages/super-admin/gym-edit/gym-edit",
+    "pages/super-admin/gym-admins/gym-admins",
+    "pages/gym-admin/gym-info/gym-info",
+    "pages/gym-admin/approval/approval",
+    "pages/gym-admin/users/users",
+    "pages/gym-admin/user-edit/user-edit",
+    "pages/gym-admin/dashboard/dashboard",
+    "pages/coach/dashboard/dashboard",
+    "pages/coach/types/types",
+    "pages/coach/type-edit/type-edit",
+    "pages/coach/exercises/exercises",
+    "pages/coach/exercise-edit/exercise-edit",
+    "pages/coach/plans/plans",
+    "pages/coach/plan-edit/plan-edit",
+    "pages/coach/record-edit/record-edit",
+    "pages/coach/records/records",
+    "pages/coach/stats/stats",
+    "pages/student/records/records",
+    "pages/student/plans/plans",
+    "pages/student/plan-edit/plan-edit",
+    "pages/student/stats/stats",
+    "pages/record-detail/record-detail",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4A90D9",
+    "navigationBarTitleText": "健身记录",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F5F6FA"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#999999",
+    "selectedColor": "#4A90D9",
+    "backgroundColor": "#ffffff",
+    "list": [
+      { "pagePath": "pages/student/records/records", "text": "训练记录" },
+      { "pagePath": "pages/student/plans/plans", "text": "训练计划" },
+      { "pagePath": "pages/student/stats/stats", "text": "数据统计" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

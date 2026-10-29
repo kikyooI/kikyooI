@@ -1,0 +1,25 @@
+.plan-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 12rpx;
+}
+
+.plan-meta {
+  display: flex;
+  align-items: center;
+}
+
+.fab {
+  position: fixed;
+  right: 40rpx;
+  bottom: 60rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #4A90D9;
+  color: #fff;
+  font-size: 56rpx;
+  text-align: center;
+  line-height: 100rpx;
+  box-shadow: 0 8rpx 24rpx rgba(74,144,217,0.4);
+}

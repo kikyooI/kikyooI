@@ -1,0 +1,12 @@
+<view class="login-container">
+  <view class="logo">
+    <view class="logo-icon">💪</view>
+    <view class="logo-title">健身记录</view>
+    <view class="logo-subtitle">记录每一次进步</view>
+  </view>
+  <view class="login-btn">
+    <button class="btn-primary" bindtap="onLogin" loading="{{loading}}" disabled="{{loading}}">
+      {{loading ? '登录中...' : '微信一键登录'}}
+    </button>
+  </view>
+</view>

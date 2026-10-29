@@ -1,0 +1,9 @@
+<view class="container">
+  <view wx:if="{{admins.length===0}}" class="empty">暂无管理员</view>
+
+  <view wx:for="{{admins}}" wx:key="_id" class="card">
+    <view class="admin-name">{{item.name}}</view>
+    <view class="text-muted">{{item.phone || '未填写电话'}}</view>
+    <view class="text-muted">状态：{{item.status === 'approved' ? '正常' : '待审批'}}</view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<view class="container">
+  <view wx:if="{{types.length === 0}}" class="empty">
+    暂无训练类型，可导入初始数据或手动添加
+  </view>
+
+  <view wx:if="{{types.length === 0}}" class="seed-btn" bindtap="onSeed">📥 导入初始训练数据</view>
+
+  <view wx:for="{{types}}" wx:key="_id" class="card">
+    <view class="flex-between" bindtap="goExercises" data-id="{{item._id}}">
+      <view>
+        <view class="type-name">{{item.name}}</view>
+        <view class="text-muted">点击查看动作</view>
+      </view>
+      <view class="flex-row">
+        <view class="btn-outline" catchtap="onEdit" data-id="{{item._id}}">编辑</view>
+        <view class="btn-outline" style="color:#e74c3c;border-color:#e74c3c;margin-left:16rpx;" catchtap="onDelete" data-id="{{item._id}}">删除</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="fab" bindtap="onAdd">+</view>
+</view>

@@ -1,0 +1,21 @@
+<view class="container">
+  <view wx:if="{{plans.length===0}}" class="empty">暂无训练计划</view>
+
+  <view wx:for="{{plans}}" wx:key="_id" class="card">
+    <view class="flex-between">
+      <view class="flex-1">
+        <view class="plan-name">{{item.name}}</view>
+        <view class="plan-meta">
+          <text wx:if="{{item.createdBy===openid}}" class="tag tag-green">我创建的</text>
+          <text wx:elif="{{item.assignedTo===openid}}" class="tag tag-orange">分配给我</text>
+          <text wx:else class="tag tag-blue">公共模板</text>
+          <text class="text-muted" style="margin-left:12rpx;">{{item.planDate}}</text>
+          <text class="text-muted" style="margin-left:12rpx;">{{item.items.length}}个动作</text>
+        </view>
+      </view>
+      <view class="btn-outline" catchtap="onEdit" data-id="{{item._id}}">查看/编辑</view>
+    </view>
+  </view>
+
+  <view class="fab" style="bottom:200rpx;" bindtap="onAdd">+</view>
+</view>

@@ -1,0 +1,97 @@
+<view class="container">
+  <view class="card">
+    <view class="form-item">
+      <text class="form-label">学员 *</text>
+      <picker wx:if="{{!isEdit && !isStudent}}" mode="selector" range="{{students}}" range-key="name" value="{{studentIndex}}" bindchange="onStudentChange">
+        <view class="picker-box">
+          {{students.length>0 ? students[studentIndex].name : '暂无学员'}}
+          <text class="arrow">›</text>
+        </view>
+      </picker>
+      <view wx:else class="picker-box">{{studentName}}</view>
+    </view>
+
+    <view class="form-item" wx:if="{{isStudent && !isEdit}}">
+      <text class="form-label">指导教练</text>
+      <picker mode="selector" range="{{coaches}}" range-key="name" value="{{coachIndex}}" bindchange="onCoachChange">
+        <view class="picker-box">
+          {{coaches.length>0 ? coaches[coachIndex].name : '加载中...'}}
+          <text class="arrow">›</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item" wx:if="{{!isEdit}}">
+      <text class="form-label">引用计划</text>
+      <picker mode="selector" range="{{plans}}" range-key="name" value="{{planIndex}}" bindchange="onPlanChange">
+        <view class="picker-box">
+          {{plans.length>0 ? plans[planIndex].name : '该学员暂无计划'}}
+          <text class="arrow">›</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">训练日期 *</text>
+      <picker mode="date" value="{{trainingDate}}" bindchange="onDateChange">
+        <view class="picker-box">
+          {{trainingDate}}
+          <text class="arrow">›</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">训练类型 *</text>
+      <picker mode="selector" range="{{types}}" range-key="name" value="{{typeIndex}}" bindchange="onTypeChange">
+        <view class="picker-box">
+          {{types.length>0 ? types[typeIndex].name : '暂无类型'}}
+          <text class="arrow">›</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="section-title">训练动作</view>
+
+  <view wx:for="{{items}}" wx:key="_id" class="card">
+    <view class="flex-between" style="margin-bottom:20rpx;">
+      <text class="ex-name">{{item.name}}</text>
+      <text class="del-btn" catchtap="onRemoveExercise" data-idx="{{index}}">✕</text>
+    </view>
+
+    <view class="set-header">
+      <text class="set-col">组</text>
+      <text class="set-col">个数(个)</text>
+      <text class="set-col">重量(kg)</text>
+      <text class="set-col-act"></text>
+    </view>
+
+    <view wx:for="{{item.sets}}" wx:for-item="set" wx:for-index="setIdx" wx:key="setIdx" class="set-row">
+      <text class="set-col">{{setIdx+1}}</text>
+      <input class="set-input" type="number" value="{{set.reps}}" data-item-idx="{{index}}" data-set-idx="{{setIdx}}" data-field="reps" bindinput="onSetInput" />
+      <input class="set-input" type="digit" value="{{set.weight}}" data-item-idx="{{index}}" data-set-idx="{{setIdx}}" data-field="weight" bindinput="onSetInput" />
+      <text class="set-del" catchtap="onRemoveSet" data-item-idx="{{index}}" data-set-idx="{{setIdx}}">删除</text>
+    </view>
+
+    <view class="add-set" catchtap="onAddSet" data-idx="{{index}}">+ 添加一组</view>
+  </view>
+
+  <view wx:if="{{items.length===0}}" class="empty">点击下方按钮添加训练动作</view>
+
+  <picker wx:if="{{exercises.length > 0}}" mode="selector" range="{{exercises}}" range-key="name" bindchange="onExercisePick">
+    <view class="add-exercise">+ 添加训练动作</view>
+  </picker>
+  <view wx:else class="add-exercise" bindtap="onNoExercise">+ 添加训练动作</view>
+
+  <view class="form-item" style="margin-top:32rpx;">
+    <text class="form-label">备注</text>
+    <textarea class="form-textarea" placeholder="训练备注" value="{{notes}}" bindinput="onNotesInput"></textarea>
+  </view>
+
+  <view style="height:120rpx;"></view>
+
+  <view class="footer-bar">
+    <button class="btn-primary" bindtap="submit" loading="{{loading}}" disabled="{{loading}}">保存记录</button>
+  </view>
+</view>

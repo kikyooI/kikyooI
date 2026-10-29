@@ -1,0 +1,86 @@
+.picker-box {
+  height: 80rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 0 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+
+.arrow {
+  color: #ccc;
+  font-size: 36rpx;
+}
+
+.ex-name {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.del-btn {
+  color: #e74c3c;
+  font-size: 32rpx;
+  padding: 0 10rpx;
+}
+
+.set-header, .set-row {
+  display: flex;
+  align-items: center;
+  padding: 12rpx 0;
+}
+
+.set-header {
+  background: #f5f6fa;
+  border-radius: 8rpx;
+  padding: 12rpx 16rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.set-col {
+  flex: 1;
+  text-align: center;
+}
+
+.set-col-act {
+  width: 100rpx;
+}
+
+.set-input {
+  flex: 1;
+  height: 64rpx;
+  background: #f5f6fa;
+  border-radius: 8rpx;
+  text-align: center;
+  font-size: 26rpx;
+  margin: 0 8rpx;
+}
+
+.set-del {
+  width: 100rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #e74c3c;
+}
+
+.add-set {
+  text-align: center;
+  color: #4A90D9;
+  font-size: 26rpx;
+  padding: 16rpx 0;
+  margin-top: 12rpx;
+  border-top: 1rpx dashed #eee;
+}
+
+.add-exercise {
+  background: #fff;
+  border: 2rpx dashed #4A90D9;
+  color: #4A90D9;
+  text-align: center;
+  padding: 28rpx 0;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+  margin-top: 16rpx;
+}

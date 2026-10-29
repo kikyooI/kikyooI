@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="form-item">
+    <text class="form-label">动作名称 *</text>
+    <input class="form-input" placeholder="如：杠铃卧推" value="{{name}}" data-field="name" bindinput="onInput" />
+  </view>
+
+  <view class="form-item">
+    <text class="form-label">训练类型 *</text>
+    <picker mode="selector" range="{{types}}" range-key="name" value="{{typeIndex}}" bindchange="onTypeChange">
+      <view class="picker-box">
+        {{types.length>0 ? types[typeIndex].name : '请选择'}}
+        <text class="arrow">›</text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="form-item">
+    <text class="form-label">描述</text>
+    <textarea class="form-textarea" placeholder="动作要领、注意事项等" value="{{description}}" data-field="description" bindinput="onInput"></textarea>
+  </view>
+
+  <view style="margin-top:60rpx;">
+    <button class="btn-primary" bindtap="submit" loading="{{loading}}" disabled="{{loading}}">保存</button>
+  </view>
+</view>
