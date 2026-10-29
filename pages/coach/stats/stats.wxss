@@ -8,7 +8,7 @@
   padding: 12rpx 32rpx;
   border-radius: 32rpx;
   font-size: 26rpx;
-  color: #4A90D9;
+  color: #21C064;
 }
 
 .freq-row {
@@ -27,15 +27,15 @@
   flex: 1;
   height: 24rpx;
   background: #f0f0f0;
-  border-radius: 12rpx;
+  border-radius: 20rpx;
   margin: 0 16rpx;
   overflow: hidden;
 }
 
 .freq-bar {
   height: 100%;
-  background: linear-gradient(90deg, #4A90D9, #357ABD);
-  border-radius: 12rpx;
+  background: linear-gradient(90deg, #21C064, #357ABD);
+  border-radius: 20rpx;
   min-width: 10rpx;
 }
 
@@ -56,7 +56,7 @@
   font-size: 28rpx;
   font-weight: 600;
   margin-bottom: 12rpx;
-  color: #4A90D9;
+  color: #21C064;
 }
 
 .trend-row {

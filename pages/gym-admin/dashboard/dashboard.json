@@ -1,4 +1,4 @@
 {
-  "navigationBarTitleText": "管理工作台",
+  "navigationStyle": "custom",
   "usingComponents": {}
 }

@@ -1,26 +1,21 @@
 <view class="container">
-  <view class="filter-bar">
+  <view class="chips">
     <picker mode="selector" range="{{students}}" range-key="name" value="{{studentIndex}}" bindchange="onStudentChange">
-      <view class="filter-item">
-        {{students.length>0 ? students[studentIndex].name : '筛选'}} ▾
-      </view>
+      <view class="chip active">{{students.length>0 ? students[studentIndex].name : '筛选学员'}} ▾</view>
     </picker>
   </view>
 
-  <view wx:if="{{records.length===0}}" class="empty">暂无训练记录</view>
+  <view wx:if="{{records.length===0}}" class="empty">暂无训练记录，点击右下角添加</view>
 
-  <view wx:for="{{records}}" wx:key="_id" class="card" bindtap="goDetail" data-id="{{item._id}}">
-    <view class="flex-between">
-      <view>
-        <view class="record-date">{{item.trainingDate}}</view>
-        <view class="record-student">{{item.studentName}} · {{item.typeName}}</view>
+  <view wx:else class="list">
+    <view wx:for="{{records}}" wx:key="_id" class="list-row" bindtap="goDetail" data-id="{{item._id}}">
+      <view class="list-thumb">📋</view>
+      <view class="list-main">
+        <view class="list-title">{{item.studentName}}</view>
+        <view class="list-sub">{{item.trainingDate}} · {{item.typeName}} · {{item.items.length}} 个动作</view>
       </view>
-      <text class="arrow">›</text>
+      <text class="list-arrow">›</text>
     </view>
-    <view class="record-summary">
-      共 {{item.items.length}} 个动作
-    </view>
-    <view wx:if="{{item.notes}}" class="text-muted" style="margin-top:8rpx;">{{item.notes}}</view>
   </view>
 
   <view wx:if="{{records.length>0}}" class="text-muted" style="text-align:center;padding:24rpx 0;">

@@ -10,7 +10,7 @@
 
 .picker-box {
   background: #fff;
-  border-radius: 12rpx;
+  border-radius: 20rpx;
   padding: 24rpx 30rpx;
   display: flex;
   justify-content: space-between;
@@ -31,10 +31,10 @@
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
-  background: #4A90D9;
+  background: #21C064;
   color: #fff;
   font-size: 56rpx;
   text-align: center;
   line-height: 100rpx;
-  box-shadow: 0 8rpx 24rpx rgba(74,144,217,0.4);
+  box-shadow: 0 8rpx 24rpx rgba(33,192,100,0.4);
 }

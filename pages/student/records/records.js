@@ -9,14 +9,18 @@ Page({
     loading: false,
     page: 1,
     pageSize: 20,
-    hasMore: true
+    hasMore: true,
+    stats: { count: 0, actions: 0, types: 0 }
   },
 
   onShow() {
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({ selected: 0 })
     }
-    this.setData({ name: app.globalData.name || '' })
+    this.setData({
+      name: app.globalData.name || '',
+      statusBarHeight: app.globalData.statusBarHeight || 20
+    })
     this.loadRecords()
   },
 
@@ -25,9 +29,11 @@ Page({
     this.setData({ loading: true })
     try {
       const list = await api.getRecords({ page: this.data.page, pageSize: this.data.pageSize })
+      const records = reset ? list : [...this.data.records, ...list]
       this.setData({
-        records: reset ? list : [...this.data.records, ...list],
-        hasMore: list.length >= this.data.pageSize
+        records,
+        hasMore: list.length >= this.data.pageSize,
+        stats: this.buildStats(records)
       })
     } catch (e) {
       console.error(e)
@@ -40,6 +46,17 @@ Page({
     if (!this.data.hasMore || this.data.loading) return
     this.setData({ page: this.data.page + 1 })
     this.loadRecords(false)
+  },
+
+  // 顶部概览统计（基于已加载的记录）
+  buildStats(records) {
+    let actions = 0
+    const types = new Set()
+    records.forEach(r => {
+      actions += (r.items || []).length
+      if (r.typeName) types.add(r.typeName)
+    })
+    return { count: records.length, actions, types: types.size }
   },
 
   onAdd() {

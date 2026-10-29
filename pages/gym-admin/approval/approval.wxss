@@ -16,8 +16,8 @@
 }
 
 .tag-blue {
-  background: #e8f4fd;
-  color: #4A90D9;
+  background: #E9F8EF;
+  color: #21C064;
 }
 
 .tag-green {
@@ -28,4 +28,28 @@
 .tag-orange {
   background: #fff3e0;
   color: #e67e22;
+}
+
+.pass-btn {
+  flex: 1;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  background: #21C064;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: 600;
+  border-radius: 999rpx;
+  margin-right: 20rpx;
+}
+
+.reject-btn {
+  flex: 1;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  background: #FDECEA;
+  color: #E8503A;
+  font-size: 28rpx;
+  border-radius: 999rpx;
 }

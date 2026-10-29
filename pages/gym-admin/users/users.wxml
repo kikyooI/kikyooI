@@ -9,7 +9,8 @@
   <view wx:if="{{users.length===0}}" class="empty">暂无用户</view>
 
   <view wx:for="{{users}}" wx:key="_id" class="card">
-    <view class="flex-between">
+    <view class="flex-row">
+      <view class="list-thumb">{{item.role==='coach'?'🧑‍🏫':item.role==='student'?'🧑‍🎓':'🛡️'}}</view>
       <view class="flex-1">
         <view class="user-name">{{item.name}}</view>
         <view class="user-meta">

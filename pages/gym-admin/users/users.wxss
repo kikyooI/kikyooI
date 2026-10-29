@@ -16,8 +16,8 @@
 }
 
 .tag-blue {
-  background: #e8f4fd;
-  color: #4A90D9;
+  background: #E9F8EF;
+  color: #21C064;
 }
 
 .tag-green {
@@ -37,24 +37,26 @@
 
 .filter-tabs {
   display: flex;
-  background: #fff;
-  border-radius: 12rpx;
-  padding: 8rpx;
+  flex-wrap: nowrap;
+  gap: 16rpx;
+  padding: 0;
   margin-bottom: 24rpx;
+  overflow-x: auto;
 }
 
 .tab {
-  flex: 1;
-  text-align: center;
-  padding: 16rpx 0;
-  font-size: 26rpx;
-  color: #666;
-  border-radius: 8rpx;
+  flex-shrink: 0;
+  padding: 16rpx 36rpx;
+  font-size: 27rpx;
+  color: #444;
+  background: #ECECF1;
+  border-radius: 999rpx;
 }
 
 .tab.active {
-  background: #4A90D9;
+  background: #21C064;
   color: #fff;
+  font-weight: 600;
 }
 
 .action-row {
@@ -65,21 +67,21 @@
 }
 
 .action-btn {
-  padding: 12rpx 28rpx;
-  border-radius: 8rpx;
-  font-size: 26rpx;
-  border: 1rpx solid #ddd;
-  color: #666;
+  padding: 14rpx 30rpx;
+  border-radius: 999rpx;
+  font-size: 25rpx;
+  border: none;
+  background: #F0F2F6;
+  color: #333;
 }
 
 .btn-primary {
-  background: #4A90D9;
-  color: #fff;
-  border-color: #4A90D9;
+  background: #E9F8EF;
+  color: #21C064;
+  font-weight: 600;
 }
 
 .btn-danger {
-  background: #fff;
-  color: #e74c3c;
-  border-color: #e74c3c;
+  background: #FDECEA;
+  color: #E8503A;
 }

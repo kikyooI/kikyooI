@@ -6,11 +6,11 @@
 
 .seed-btn {
   background: #fff;
-  border: 2rpx solid #4A90D9;
-  color: #4A90D9;
+  border: 2rpx solid #21C064;
+  color: #21C064;
   text-align: center;
   padding: 28rpx 0;
-  border-radius: 16rpx;
+  border-radius: 28rpx;
   font-size: 30rpx;
   margin-bottom: 24rpx;
 }
@@ -22,10 +22,10 @@
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
-  background: #4A90D9;
+  background: #21C064;
   color: #fff;
   font-size: 56rpx;
   text-align: center;
   line-height: 100rpx;
-  box-shadow: 0 8rpx 24rpx rgba(74,144,217,0.4);
+  box-shadow: 0 8rpx 24rpx rgba(33,192,100,0.4);
 }

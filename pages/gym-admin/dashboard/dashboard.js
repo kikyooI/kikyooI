@@ -22,9 +22,25 @@ Page({
 
   onShow() {
     this.setData({
+      name: (app.globalData.name || wx.getStorageSync('name') || ''),
+      statusBarHeight: app.globalData.statusBarHeight || 20,
       isSuperAdmin: app.globalData.role === 'super_admin' && !!wx.getStorageSync('currentGymId')
     })
     this.loadPending()
+    this.loadCounts()
+  },
+
+  async loadCounts() {
+    try {
+      const users = await api.getUsers({})
+      const approved = users.filter(u => u.status === 'approved')
+      this.setData({
+        coachCount: approved.filter(u => u.role === 'coach' || u.role === 'gym_admin').length,
+        studentCount: approved.filter(u => u.role === 'student').length
+      })
+    } catch (e) {
+      console.error(e)
+    }
   },
 
   exitGym() {

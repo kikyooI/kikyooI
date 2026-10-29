@@ -1,8 +1,16 @@
 <view class="container">
-  <!-- 头部 -->
-  <view class="header">
-    <view class="header-title">健身房管理</view>
-    <view class="header-sub">共 {{gyms.length}} 家门店</view>
+  <view style="height:{{statusBarHeight}}px;"></view>
+  <view class="h-header">
+    <view class="h-top">
+      <view class="h-avatar">🏋️</view>
+      <view class="h-info">
+        <view class="h-name">健身房管理</view>
+        <view class="h-chips">
+          <text class="h-chip">共 {{gyms.length}} 家门店</text>
+        </view>
+      </view>
+      <view class="h-link" bindtap="logout">退出登录 ›</view>
+    </view>
   </view>
 
   <!-- 审批入口 -->
@@ -36,6 +44,4 @@
   </view>
 
   <view class="fab" bindtap="onAdd">+</view>
-
-  <view class="logout" bindtap="logout">退出登录</view>
 </view>

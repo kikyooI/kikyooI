@@ -1,25 +1,62 @@
 <view class="container">
-  <view class="header">
-    <view class="welcome">你好，教练 👋</view>
-    <view class="today">{{today}}</view>
-  </view>
-
-  <view class="stat-card">
-    <view class="stat-item">
-      <view class="stat-num">{{stats.totalRecords}}</view>
-      <view class="stat-label">今日记录</view>
+  <view style="height:{{statusBarHeight}}px;"></view>
+  <view class="h-header">
+    <view class="h-top">
+      <view class="h-avatar">🧑‍🏫</view>
+      <view class="h-info">
+        <view class="h-name">{{name || '教练'}}</view>
+        <view class="h-chips">
+          <text class="h-chip">今日记录 {{stats.totalRecords}}</text>
+          <text wx:if="{{pendingCount>0}}" class="h-chip">待审批 {{pendingCount}}</text>
+        </view>
+      </view>
+      <view class="h-link" bindtap="goPage" data-url="/pages/profile/profile">我的资料 ›</view>
     </view>
   </view>
 
-  <view class="menu-grid">
-    <view wx:for="{{menuList}}" wx:key="name" class="menu-item" bindtap="goPage" data-url="{{item.url}}">
-      <view class="menu-icon">{{item.icon}}</view>
-      <view class="menu-name">{{item.name}}</view>
-      <view wx:if="{{item.name==='学员审批' && pendingCount>0}}" class="badge">{{pendingCount}}</view>
+  <view class="card">
+    <view class="card-title">今日概览</view>
+    <view class="overview-stats" style="margin-top:24rpx;">
+      <view class="overview-stat">
+        <view class="overview-num">{{stats.totalRecords || 0}}</view>
+        <view class="overview-label">今日记录</view>
+      </view>
+      <view class="overview-stat">
+        <view class="overview-num">{{stats.studentCount || 0}}</view>
+        <view class="overview-label">训练学员</view>
+      </view>
+      <view class="overview-stat">
+        <view class="overview-num">{{pendingCount}}</view>
+        <view class="overview-label">待审批</view>
+      </view>
     </view>
   </view>
 
-  <view class="apply-btn" bindtap="applyGymAdmin">申请成为店长</view>
+  <view class="card" style="padding:16rpx 8rpx;">
+    <view class="grid-4">
+      <view wx:for="{{menuList}}" wx:key="name" class="grid-item" bindtap="goPage" data-url="{{item.url}}">
+        <view class="grid-icon">{{item.icon}}</view>
+        <view class="grid-name">{{item.name}}</view>
+        <view wx:if="{{item.name==='学员审批' && pendingCount>0}}" class="badge">{{pendingCount}}</view>
+      </view>
+    </view>
+  </view>
 
-  <view class="logout" bindtap="logout">退出登录</view>
+  <view class="list">
+    <view class="list-row" bindtap="applyGymAdmin">
+      <view class="list-thumb">🛡️</view>
+      <view class="list-main">
+        <view class="list-title">申请成为店长</view>
+        <view class="list-sub">提交后由总管理员审批</view>
+      </view>
+      <text class="list-arrow">›</text>
+    </view>
+    <view class="list-row" bindtap="logout">
+      <view class="list-thumb">🚪</view>
+      <view class="list-main">
+        <view class="list-title">退出登录</view>
+      </view>
+      <text class="list-arrow">›</text>
+    </view>
+  </view>
 </view>

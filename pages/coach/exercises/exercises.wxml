@@ -1,25 +1,21 @@
 <view class="container">
-  <view class="type-selector">
+  <view class="chips">
     <picker mode="selector" range="{{types}}" range-key="name" value="{{typeIndex}}" bindchange="onTypeChange">
-      <view class="picker-box">
-        {{types.length>0 ? types[typeIndex].name : '请选择训练类型'}}
-        <text class="arrow">›</text>
-      </view>
+      <view class="chip active">{{types.length>0 ? types[typeIndex].name : '请选择训练类型'}} ▾</view>
     </picker>
   </view>
 
   <view wx:if="{{exercises.length === 0}}" class="empty">暂无动作，点击右下角添加</view>
 
-  <view wx:for="{{exercises}}" wx:key="_id" class="card">
-    <view class="flex-between">
-      <view class="flex-1">
-        <view class="ex-name">{{item.name}}</view>
-        <view wx:if="{{item.description}}" class="text-muted">{{item.description}}</view>
+  <view wx:else class="list">
+    <view wx:for="{{exercises}}" wx:key="_id" class="list-row">
+      <view class="list-thumb">🏋️</view>
+      <view class="list-main">
+        <view class="list-title">{{item.name}}</view>
+        <view wx:if="{{item.description}}" class="list-sub">{{item.description}}</view>
       </view>
-      <view class="flex-row">
-        <view class="btn-outline" catchtap="onEdit" data-id="{{item._id}}">编辑</view>
-        <view class="btn-outline" style="color:#e74c3c;border-color:#e74c3c;margin-left:16rpx;" catchtap="onDelete" data-id="{{item._id}}">删除</view>
-      </view>
+      <text class="row-act" catchtap="onEdit" data-id="{{item._id}}">编辑</text>
+      <text class="row-del" catchtap="onDelete" data-id="{{item._id}}">删除</text>
     </view>
   </view>
 

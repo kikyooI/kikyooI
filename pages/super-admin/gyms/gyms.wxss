@@ -16,14 +16,14 @@
 
 /* 审批入口 */
 .approval-entry {
-  background: linear-gradient(135deg, #4A90D9, #357ABD);
-  border-radius: 16rpx;
+  background: linear-gradient(135deg, #21C064, #357ABD);
+  border-radius: 28rpx;
   padding: 28rpx 30rpx;
   margin-bottom: 28rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 8rpx 20rpx rgba(74,144,217,0.25);
+  box-shadow: 0 8rpx 20rpx rgba(33,192,100,0.25);
 }
 
 .approval-left {
@@ -34,7 +34,7 @@
 .approval-icon {
   width: 64rpx;
   height: 64rpx;
-  border-radius: 16rpx;
+  border-radius: 28rpx;
   background: rgba(255,255,255,0.2);
   text-align: center;
   line-height: 64rpx;
@@ -128,14 +128,14 @@
   border-radius: 36rpx;
   font-size: 26rpx;
   line-height: 1.4;
-  color: #4A90D9;
+  color: #21C064;
   background: #EAF3FC;
   margin-right: 20rpx;
   text-align: center;
 }
 
 .act-primary {
-  background: #4A90D9;
+  background: #21C064;
   color: #fff;
 }
 
@@ -146,12 +146,12 @@
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
-  background: #4A90D9;
+  background: #21C064;
   color: #fff;
   font-size: 56rpx;
   text-align: center;
   line-height: 100rpx;
-  box-shadow: 0 8rpx 24rpx rgba(74,144,217,0.4);
+  box-shadow: 0 8rpx 24rpx rgba(33,192,100,0.4);
 }
 
 .logout {

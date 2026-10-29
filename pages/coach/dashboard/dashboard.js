@@ -20,6 +20,10 @@ Page({
   },
 
   onShow() {
+    this.setData({
+      name: (getApp().globalData.name || wx.getStorageSync('name') || ''),
+      statusBarHeight: getApp().globalData.statusBarHeight || 20
+    })
     this.loadStats()
     this.loadPending()
   },

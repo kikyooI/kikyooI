@@ -1,23 +1,56 @@
 <view class="container">
-  <view class="page-header">
-    <view>
-      <view class="hello">你好，{{name}}</view>
-      <view class="hello-sub">坚持训练，遇见更好的自己 💪</view>
+  <view style="height:{{statusBarHeight}}px;"></view>
+  <view class="h-header">
+    <view class="h-top">
+      <view class="h-avatar" bindtap="goProfile">👤</view>
+      <view class="h-info">
+        <view class="h-name">{{name || '未设置姓名'}}</view>
+        <view class="h-chips">
+          <text class="h-chip">记录 {{stats.count}}</text>
+          <text class="h-chip">动作 {{stats.actions}}</text>
+        </view>
+      </view>
+      <view class="h-link" bindtap="goProfile">个人主页 ›</view>
     </view>
-    <view class="profile-avatar" bindtap="goProfile">👤</view>
   </view>
 
-  <view wx:if="{{records.length===0}}" class="empty">暂无训练记录</view>
-
-  <view wx:for="{{records}}" wx:key="_id" class="card" bindtap="goDetail" data-id="{{item._id}}">
+  <view class="card">
     <view class="flex-between">
-      <view>
-        <view class="record-date">{{item.trainingDate}}</view>
-        <view class="record-type">{{item.typeName}} · {{item.items.length}}个动作</view>
-      </view>
-      <text class="arrow">›</text>
+      <text class="card-title">训练概览</text>
+      <text class="text-muted">累计数据</text>
     </view>
-    <view wx:if="{{item.notes}}" class="text-muted" style="margin-top:8rpx;">{{item.notes}}</view>
+    <view class="overview-stats" style="margin-top:28rpx;">
+      <view class="overview-stat">
+        <view class="overview-num">{{stats.count}}</view>
+        <view class="overview-label">训练记录</view>
+      </view>
+      <view class="overview-stat">
+        <view class="overview-num">{{stats.actions}}</view>
+        <view class="overview-label">动作总数</view>
+      </view>
+      <view class="overview-stat">
+        <view class="overview-num">{{stats.types}}</view>
+        <view class="overview-label">训练类型</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-title" style="margin-top:8rpx;">训练记录</view>
+
+  <view wx:if="{{records.length===0}}" class="empty">
+    <view>暂无训练记录</view>
+    <view style="margin-top:12rpx;">点击右下角开始记录</view>
+  </view>
+
+  <view wx:else class="list">
+    <view wx:for="{{records}}" wx:key="_id" class="list-row" bindtap="goDetail" data-id="{{item._id}}">
+      <view class="list-thumb">📋</view>
+      <view class="list-main">
+        <view class="list-title">{{item.trainingDate}}</view>
+        <view class="list-sub">{{item.typeName || '训练'}} · {{item.items.length}} 个动作</view>
+      </view>
+      <text class="list-arrow">›</text>
+    </view>
   </view>
 
   <view wx:if="{{records.length>0}}" class="text-muted" style="text-align:center;padding:24rpx 0;">
@@ -26,6 +59,4 @@
   </view>
 
   <view class="fab" style="bottom:200rpx;" bindtap="onAdd">+</view>
-
-  <view class="logout" bindtap="logout">退出登录</view>
 </view>

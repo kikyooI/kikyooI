@@ -2,8 +2,9 @@
   <view wx:if="{{users.length===0}}" class="empty">暂无待审批用户</view>
 
   <view wx:for="{{users}}" wx:key="_id" class="card">
-    <view class="flex-between">
-      <view>
+    <view class="flex-row">
+      <view class="list-thumb">{{item.status==='pending_gym_admin'?'🛡️':item.role==='coach'?'🧑‍🏫':'🧑‍🎓'}}</view>
+      <view class="flex-1">
         <view class="user-name">{{item.name}}</view>
         <view class="user-meta">
           <text wx:if="{{item.status==='pending_gym_admin'}}" class="tag tag-orange">店长申请</text>
@@ -14,8 +15,8 @@
       </view>
     </view>
     <view class="flex-row" style="margin-top:20rpx;">
-      <view class="btn-outline" style="color:#27ae60;border-color:#27ae60;flex:1;margin-right:16rpx;text-align:center;" catchtap="approve" data-id="{{item._id}}">通过</view>
-      <view class="btn-outline" style="color:#e74c3c;border-color:#e74c3c;flex:1;text-align:center;" catchtap="reject" data-id="{{item._id}}">驳回</view>
+      <view class="pass-btn" catchtap="approve" data-id="{{item._id}}">通过</view>
+      <view class="reject-btn" catchtap="reject" data-id="{{item._id}}">驳回</view>
     </view>
   </view>
 </view>

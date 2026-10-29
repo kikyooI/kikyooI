@@ -5,16 +5,16 @@
 
   <view wx:if="{{types.length === 0}}" class="seed-btn" bindtap="onSeed">📥 导入初始训练数据</view>
 
-  <view wx:for="{{types}}" wx:key="_id" class="card">
-    <view class="flex-between" bindtap="goExercises" data-id="{{item._id}}">
-      <view>
-        <view class="type-name">{{item.name}}</view>
-        <view class="text-muted">点击查看动作</view>
+  <view wx:else class="list">
+    <view wx:for="{{types}}" wx:key="_id" class="list-row">
+      <view class="list-thumb">🏷️</view>
+      <view class="list-main" catchtap="goExercises" data-id="{{item._id}}">
+        <view class="list-title">{{item.name}}</view>
+        <view class="list-sub">点击查看动作</view>
       </view>
-      <view class="flex-row">
-        <view class="btn-outline" catchtap="onEdit" data-id="{{item._id}}">编辑</view>
-        <view class="btn-outline" style="color:#e74c3c;border-color:#e74c3c;margin-left:16rpx;" catchtap="onDelete" data-id="{{item._id}}">删除</view>
-      </view>
+      <text class="row-act" catchtap="onEdit" data-id="{{item._id}}">编辑</text>
+      <text class="row-del" catchtap="onDelete" data-id="{{item._id}}">删除</text>
+      <text class="list-arrow" catchtap="goExercises" data-id="{{item._id}}">›</text>
     </view>
   </view>
 

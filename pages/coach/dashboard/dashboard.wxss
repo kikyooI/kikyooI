@@ -14,8 +14,8 @@
 }
 
 .stat-card {
-  background: linear-gradient(135deg, #4A90D9 0%, #357ABD 100%);
-  border-radius: 16rpx;
+  background: linear-gradient(135deg, #21C064 0%, #357ABD 100%);
+  border-radius: 28rpx;
   padding: 40rpx;
   color: #fff;
   margin-bottom: 32rpx;
@@ -44,19 +44,25 @@
 .menu-item {
   width: calc((100% - 40rpx) / 3);
   background: #fff;
-  border-radius: 16rpx;
+  border-radius: 28rpx;
   padding: 36rpx 0;
   text-align: center;
 }
 
 .menu-icon {
-  font-size: 56rpx;
-  margin-bottom: 12rpx;
+  width: 88rpx;
+  height: 88rpx;
+  margin: 0 auto 14rpx;
+  border-radius: 26rpx;
+  background: #F4F5F8;
+  line-height: 88rpx;
+  font-size: 44rpx;
+  text-align: center;
 }
 
 .menu-name {
   font-size: 26rpx;
-  color: #666;
+  color: #333;
 }
 
 .badge {
@@ -69,7 +75,7 @@
   min-width: 32rpx;
   height: 32rpx;
   line-height: 32rpx;
-  border-radius: 16rpx;
+  border-radius: 28rpx;
   padding: 0 8rpx;
 }
 

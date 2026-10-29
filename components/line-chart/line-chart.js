@@ -90,7 +90,7 @@ Component({
           })
 
           // 折线
-          ctx.strokeStyle = '#4A90D9'
+          ctx.strokeStyle = '#21C064'
           ctx.lineWidth = 2
           ctx.lineJoin = 'round'
           ctx.beginPath()
@@ -106,7 +106,7 @@ Component({
           points.forEach((p, i) => {
             const x = xOf(i)
             const y = yOf(Number(p.weight) || 0)
-            ctx.fillStyle = '#4A90D9'
+            ctx.fillStyle = '#21C064'
             ctx.beginPath()
             ctx.arc(x, y, 3, 0, Math.PI * 2)
             ctx.fill()

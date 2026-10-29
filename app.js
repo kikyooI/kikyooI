@@ -9,13 +9,15 @@ App({
         traceUser: true
       })
     }
+    const sys = wx.getWindowInfo ? wx.getWindowInfo() : wx.getSystemInfoSync()
     this.globalData = {
       userInfo: null,
       openid: null,
       role: null,
       gymId: null,
       status: null,
-      name: null
+      name: null,
+      statusBarHeight: (sys.statusBarHeight || 20) + 44
     }
   },
 

@@ -10,6 +10,8 @@ Page({
   },
 
   onShow() {
+    const app = getApp()
+    this.setData({ statusBarHeight: app.globalData.statusBarHeight || 20 })
     this.loadGyms()
     this.loadPending()
   },

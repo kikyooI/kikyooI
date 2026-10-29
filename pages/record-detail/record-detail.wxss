@@ -45,8 +45,8 @@
 }
 
 .set-header {
-  background: #f5f6fa;
-  border-radius: 8rpx;
+  background: #F4F5F8;
+  border-radius: 14rpx;
   padding: 12rpx 16rpx;
   font-size: 24rpx;
   color: #999;
